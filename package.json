@@ -2,13 +2,14 @@
   "name": "techui-react-components",
   "version": "1.0.0",
   "description": "Reusable React UI components for tech websites and applications",
+  "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
