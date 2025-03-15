@@ -1,19 +1,19 @@
-# ReThink UI Components
+# TechUI React Components
 
-A collection of modern, reusable UI components built with vanilla JavaScript and CSS. These components are designed to enhance the user experience of your website with interactive elements that are easy to integrate and customize.
+A collection of modern, reusable React UI components for tech websites and applications. These components are designed to enhance the user experience with interactive elements that are easy to integrate and customize.
 
 ## Components
 
-### 1. Floating Appointment Button
-A persistent button that stays at the bottom right of the screen, providing easy access to booking appointments from any page. Features a subtle pulsing animation to draw attention.
+### 1. Floating Action Button
+A persistent button that stays at the bottom right of the screen, providing easy access to key actions. Features a subtle pulsing animation to draw attention.
 
-### 2. Enhanced Testimonial Carousel
-A modern testimonial display with smooth transitions, star ratings, and improved visual design. Automatically rotates through testimonials with a smooth animation.
+### 2. Interactive Testimonial Carousel
+A modern testimonial display with smooth transitions, rating indicators, and improved visual design. Automatically rotates through testimonials with a smooth animation.
 
-### 3. Enhanced Service Cards
-Modern service cards with hover effects, animated icons, and subtle background gradient effects. Provides smooth elevation and shadow effects on hover.
+### 3. Feature Cards with Animations
+Modern feature cards with hover effects, animated icons, and subtle background gradient effects. Provides smooth elevation and shadow effects on hover.
 
-### 4. Modern FAQ Accordion
+### 4. Expandable FAQ Accordion
 Sleek, modern accordion design for FAQs with smooth animations when opening/closing items. Features staggered animation when the page loads.
 
 ### 5. Scroll-to-Top Button
@@ -23,78 +23,125 @@ Appears when the user scrolls down the page, providing an easy way to return to 
 
 ### Installation
 
-1. Download or clone this repository:
+1. Install the package:
 ```bash
-git clone https://github.com/your-username/rethink-ui-components.git
+npm install techui-react-components
+# or
+yarn add techui-react-components
 ```
 
-2. Include the CSS and JavaScript files in your HTML:
-```html
-<!-- Include the CSS file -->
-<link rel="stylesheet" href="css/ui-components.css">
-
-<!-- Include Font Awesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-<!-- Include the JavaScript file -->
-<script src="js/ui-components.js"></script>
+2. Import the components:
+```jsx
+import {
+  FloatingActionButton,
+  TestimonialCarousel,
+  FeatureCard,
+  FaqAccordion,
+  ScrollToTopButton
+} from 'techui-react-components';
 ```
 
-3. Initialize the components:
-```html
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // Initialize all components at once
-        initUIComponents();
+3. Use the components in your React application:
+```jsx
+function App() {
+  return (
+    <div className="app">
+      {/* Your app content */}
 
-        // Or initialize individual components
-        // initFloatingAppointmentButton();
-        // initEnhancedTestimonials();
-        // initEnhancedServiceCards();
-        // initModernFaqAccordion();
-        // initScrollToTopButton();
-    });
-</script>
+      <TestimonialCarousel
+        testimonials={testimonialData}
+      />
+
+      <FeatureCard
+        title="Cloud Computing"
+        description="Scalable cloud solutions for your business"
+        icon="cloud"
+      />
+
+      <FaqAccordion
+        items={faqData}
+      />
+
+      <FloatingActionButton
+        icon="chat"
+        onClick={() => openChat()}
+      />
+
+      <ScrollToTopButton />
+    </div>
+  );
+}
 ```
 
 ## Customization
 
-### CSS Variables
+### Theme Customization
 
-The components use CSS variables for easy customization. You can override these variables in your own CSS to match your brand's colors and style:
+The components use a theme provider for easy customization. You can override the default theme to match your brand's colors and style:
 
-```css
-:root {
-    /* Primary color palette */
-    --primary-color: #your-primary-color;
-    --primary-light: #your-primary-light-color;
-    --primary-dark: #your-primary-dark-color;
+```jsx
+import { ThemeProvider } from 'techui-react-components';
 
-    /* Secondary colors */
-    --secondary-color: #your-secondary-color;
-    --secondary-light: #your-secondary-light-color;
-    --secondary-dark: #your-secondary-dark-color;
+const myTheme = {
+  colors: {
+    primary: '#0066ff',
+    secondary: '#6c47ff',
+    accent: '#ff7d00',
+    background: '#ffffff',
+    text: '#333333',
+  },
+  fonts: {
+    heading: '"Inter", sans-serif',
+    body: '"Roboto", sans-serif',
+  },
+  // Other theme variables...
+};
 
-    /* Other variables... */
+function App() {
+  return (
+    <ThemeProvider theme={myTheme}>
+      {/* Your app with themed components */}
+    </ThemeProvider>
+  );
 }
 ```
 
-### JavaScript Customization
+### Component Props
 
-Each component function accepts parameters for customization:
+Each component accepts props for customization:
 
-```javascript
-// Customize the target URL for the floating appointment button
-initFloatingAppointmentButton('your-custom-url.html');
+```jsx
+// Customize the floating action button
+<FloatingActionButton
+  icon="message"
+  label="Contact Us"
+  color="secondary"
+  onClick={() => openContactForm()}
+/>
 
-// Customize the selectors for the testimonial carousel
-initEnhancedTestimonials('.your-testimonials-container', '.your-testimonial-item');
+// Customize the testimonial carousel
+<TestimonialCarousel
+  testimonials={testimonialData}
+  autoplay={true}
+  interval={5000}
+  showDots={true}
+/>
 
-// Customize the selector for service cards
-initEnhancedServiceCards('.your-service-card-class');
+// Customize the feature cards
+<FeatureCard
+  title="AI Solutions"
+  description="Cutting-edge artificial intelligence for your business"
+  icon="brain"
+  variant="outlined"
+  hoverEffect="lift"
+/>
 
-// Customize the selectors for the FAQ accordion
-initModernFaqAccordion('.your-faq-section', '.your-faq-item');
+// Customize the FAQ accordion
+<FaqAccordion
+  items={faqData}
+  expandMultiple={false}
+  animated={true}
+/>
 ```
 
 ## Browser Support
@@ -111,6 +158,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-- Font Awesome for the icons
-- Google Fonts for the typography
-- Developed for ReThink Mental Health
+- React for the component framework
+- Framer Motion for animations
+- Material Icons for the icon set

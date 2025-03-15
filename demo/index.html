@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechUI React Components Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <span>TechUI</span>
+      </div>
+      <nav class="nav">
+        <a href="#components">Components</a>
+        <a href="#docs">Documentation</a>
+        <a href="https://github.com/Imago-Dei2024/rethink-ui-components" target="_blank">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Modern React UI Components for Tech Websites</h1>
+      <p>A collection of beautiful, responsive, and accessible React components designed for tech websites and applications.</p>
+      <div class="cta-buttons">
+        <a href="#components" class="btn primary">View Components</a>
+        <a href="https://github.com/Imago-Dei2024/rethink-ui-components" target="_blank" class="btn secondary">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="components" class="components">
+    <div class="container">
+      <h2>Components</h2>
+
+      <div class="component-card">
+        <h3>Floating Action Button</h3>
+        <div class="component-demo" id="floating-action-demo">
+          <!-- Component will be rendered here -->
+        </div>
+        <div class="component-code">
+          <pre><code>
+import { FloatingActionButton } from 'techui-react-components';
+
+function App() {
+  return (
+    &lt;FloatingActionButton
+      icon="chat"
+      color="primary"
+      position="bottom-right"
+      onClick={() => alert('Button clicked!')}
+    /&gt;
+  );
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <h3>Interactive Testimonial Carousel</h3>
+        <div class="component-demo" id="testimonial-carousel-demo">
+          <!-- Component will be rendered here -->
+        </div>
+        <div class="component-code">
+          <pre><code>
+import { TestimonialCarousel } from 'techui-react-components';
+
+const testimonials = [
+  {
+    text: "This library has saved me countless hours of development time!",
+    name: "Alex Johnson",
+    title: "Frontend Developer",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  // More testimonials...
+];
+
+function App() {
+  return (
+    &lt;TestimonialCarousel
+      testimonials={testimonials}
+      autoPlay={true}
+      interval={5000}
+    /&gt;
+  );
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <h3>Feature Cards with Animations</h3>
+        <div class="component-demo" id="feature-cards-demo">
+          <!-- Component will be rendered here -->
+        </div>
+        <div class="component-code">
+          <pre><code>
+import { FeatureCards } from 'techui-react-components';
+
+const features = [
+  {
+    title: "Responsive Design",
+    description: "All components are fully responsive and work on all devices.",
+    icon: &lt;ResponsiveIcon /&gt;,
+    link: "/docs/responsive"
+  },
+  // More features...
+];
+
+function App() {
+  return (
+    &lt;FeatureCards
+      features={features}
+      columns={3}
+    /&gt;
+  );
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <h3>Expandable FAQ Accordion</h3>
+        <div class="component-demo" id="faq-accordion-demo">
+          <!-- Component will be rendered here -->
+        </div>
+        <div class="component-code">
+          <pre><code>
+import { FAQAccordion } from 'techui-react-components';
+
+const faqs = [
+  {
+    question: "How do I install this library?",
+    answer: "You can install it using npm or yarn: npm install techui-react-components"
+  },
+  // More FAQs...
+];
+
+function App() {
+  return (
+    &lt;FAQAccordion
+      faqs={faqs}
+      allowMultiple={false}
+    /&gt;
+  );
+}
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="component-card">
+        <h3>Scroll-to-Top Button</h3>
+        <div class="component-demo" id="scroll-to-top-demo">
+          <!-- Component will be rendered here -->
+        </div>
+        <div class="component-code">
+          <pre><code>
+import { ScrollToTopButton } from 'techui-react-components';
+
+function App() {
+  return (
+    &lt;ScrollToTopButton
+      showAtPosition={300}
+      color="primary"
+      size="medium"
+    /&gt;
+  );
+}
+          </code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="docs" class="docs">
+    <div class="container">
+      <h2>Documentation</h2>
+      <p>For detailed documentation on how to use these components, please visit our GitHub repository or check the README file.</p>
+      <a href="https://github.com/Imago-Dei2024/rethink-ui-components" target="_blank" class="btn primary">View Documentation</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2023 TechUI React Components. MIT License.</p>
+    </div>
+  </footer>
+
+  <script src="demo.js"></script>
+</body>
+</html>

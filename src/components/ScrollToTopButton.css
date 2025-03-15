@@ -1,0 +1,88 @@
+.scroll-to-top {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Size variations */
+.scroll-to-top.small {
+  width: 40px;
+  height: 40px;
+}
+
+.scroll-to-top.medium {
+  width: 50px;
+  height: 50px;
+}
+
+.scroll-to-top.large {
+  width: 60px;
+  height: 60px;
+}
+
+/* Color variations */
+.scroll-to-top.primary {
+  background-color: var(--primary-color, #3498db);
+}
+
+.scroll-to-top.secondary {
+  background-color: var(--secondary-color, #2ecc71);
+}
+
+.scroll-to-top.accent {
+  background-color: var(--accent-color, #e74c3c);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top svg {
+  width: 24px;
+  height: 24px;
+}
+
+.scroll-to-top.small svg {
+  width: 18px;
+  height: 18px;
+}
+
+.scroll-to-top.large svg {
+  width: 28px;
+  height: 28px;
+}
+
+.scroll-label {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Button with label */
+.scroll-to-top:has(.scroll-label) {
+  border-radius: 25px;
+  padding: 0 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    padding: 0 !important;
+  }
+
+  .scroll-label {
+    display: none;
+  }
+}
